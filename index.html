@@ -6,29 +6,67 @@
     <title>Monograph • Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/bdf8decc13.js" crossorigin="anonymous"></script>
-    
+
     <style>
-        /* Colors */
+        /* Light Mode Colors */
         :root {
-            --primary-color: #007bff;
-            --secondary-color: #f8f9fa;
-            --dark-text: #333;
+            --primary-color: #7b5dbd;
+            --secondary-color: #f3eefc;
+            --text-color: #333;
+            --card-bg: white;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* General Styles */
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
         }
 
         /* Navbar */
+        .navbar {
+            background: var(--card-bg);
+        }
+
         .menu-btn i, .home-btn i {
             transition: transform 0.2s ease, color 0.2s ease;
         }
+
         .menu-btn:hover i, .home-btn:hover i {
             transform: scale(1.2);
             color: var(--primary-color);
         }
 
+        .menu-btn:active i, .home-btn:active i {
+            transform: scale(0.9);
+            color: var(--primary-color);
+        }
+
         /* Hero Section */
         .hero-section {
-            background-color: var(--secondary-color);
-            padding: 60px 20px;
             text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero-section h1 {
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background: var(--primary-color);
+            color: white;
+            transition: 0.3s;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn-custom:hover {
+            background: #6749a5;
+            color: white;
         }
 
         /* Cards */
@@ -36,11 +74,15 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
             overflow: hidden;
+            background: var(--card-bg);
+            color: var(--text-color);
         }
+
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 10px 20px var(--shadow-color);
         }
+
         .card img {
             height: 200px;
             object-fit: cover;
@@ -48,7 +90,7 @@
 
         /* Footer */
         footer {
-            background: #222;
+            background: var(--primary-color);
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -59,7 +101,7 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+<nav class="navbar navbar-expand-lg border-bottom shadow-sm">
     <div class="container-fluid">
         <button class="btn btn-link text-dark menu-btn" type="button" id="hidden_btn">
             <i class="fas fa-circle-info"></i>
@@ -78,33 +120,32 @@
 
 <!-- Hero Section -->
 <div class="hero-section">
-    <h1 class="display-4 fw-bold">Welcome to Monograph</h1>
-    <p class="lead text-muted">Discover a world of books and knowledge.</p>
-    <button class="btn btn-primary btn-lg" id="start_btn">Get Started <i class="fas fa-book"></i></button>
+    <h1 class="display-4">Welcome to Monograph</h1>
+    <p class="lead">A world of books and knowledge at your fingertips.</p>
+    <a href="#" class="btn-custom">Get Started <i class="fas fa-book"></i></a>
 </div>
 
 <!-- Hero Image -->
-<img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=1200" class="img-fluid w-100" alt="Books">
+<img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=1400&auto=format&fit=crop&q=60" alt="Books" class="img-fluid w-100">
 
 <!-- Features Section -->
 <div class="container py-5">
     <p class="text-muted text-center">
-        The <strong>Monograph</strong> aims to connect users with Books and Papers or with a way to gain access to them. Our data comes from multiple <a href="#" class="text-decoration-none">sources</a>.
+        <strong>Monograph</strong> connects users with Books and Papers, offering easy access to a vast library of knowledge from multiple <a href="#" class="text-decoration-none">sources</a>.
     </p>
 </div>
 
 <!-- Cards Section -->
 <div class="container text-center">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
-        
+
         <!-- Card 1 -->
         <div class="col">
             <div class="card shadow-sm rounded-4">
-                <img src="https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?w=700" class="card-img-top" alt="Fast and Efficient">
+                <img src="https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?w=700&auto=format&fit=crop&q=60" class="card-img-top" alt="Fast and Efficient">
                 <div class="card-body">
                     <h5 class="card-title fw-bold">Fast and Efficient</h5>
-                    <p class="card-text text-muted">Access books and resources with lightning speed.</p>
-                    
+                    <p class="card-text text-muted">Access books and resources instantly.</p>
                 </div>
             </div>
         </div>
@@ -112,11 +153,10 @@
         <!-- Card 2 -->
         <div class="col">
             <div class="card shadow-sm rounded-4">
-                <img src="https://images.unsplash.com/photo-1489976908522-aabacf277f49?w=800" class="card-img-top" alt="Seamless Performance">
+                <img src="https://images.unsplash.com/photo-1489976908522-aabacf277f49?w=800&auto=format&fit=crop&q=60" class="card-img-top" alt="Seamless Performance">
                 <div class="card-body">
                     <h5 class="card-title fw-bold">Seamless Performance</h5>
-                    <p class="card-text text-muted">Optimized for smooth and uninterrupted reading.</p>
-                    <button class="btn btn-light alert-btn">Learn More</button>
+                    <p class="card-text text-muted">Optimized for a smooth reading experience.</p>
                 </div>
             </div>
         </div>
@@ -124,11 +164,10 @@
         <!-- Card 3 -->
         <div class="col">
             <div class="card shadow-sm rounded-4">
-                <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=700" class="card-img-top" alt="Diverse Library">
+                <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=700&auto=format&fit=crop&q=60" class="card-img-top" alt="Diverse Library">
                 <div class="card-body">
                     <h5 class="card-title fw-bold">Diverse Library</h5>
-                    <p class="card-text text-muted">Explore books from multiple categories and genres.</p>
-                    
+                    <p class="card-text text-muted">Explore books across multiple genres.</p>
                 </div>
             </div>
         </div>
@@ -136,11 +175,10 @@
         <!-- Card 4 -->
         <div class="col">
             <div class="card shadow-sm rounded-4">
-                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=700" class="card-img-top" alt="Community Driven">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=700&auto=format&fit=crop&q=60" class="card-img-top" alt="Community Driven">
                 <div class="card-body">
                     <h5 class="card-title fw-bold">Community Driven</h5>
                     <p class="card-text text-muted">Join a community of readers and book lovers.</p>
-                  
                 </div>
             </div>
         </div>
@@ -149,49 +187,32 @@
 </div>
 
 <br>
-<div class="alert alert-warning d-flex align-items-center" role="alert">
-  <i class="fas fa-exclamation-triangle me-2"></i>
+<div class="alert alert-light border rounded-3 shadow-sm d-flex align-items-center p-3" role="alert" style="border-left: 4px solid var(--primary-color); background-color: var(--card-bg); color: var(--text-color);">
+  <i class="fas fa-exclamation-circle fa-fade" style="color: var(--primary-color); font-size: 1.5rem; margin-right: 10px;"></i>
   <div>
-    We do not claim ownership of any content on this site. If you are the rightful owner and would like your work removed, please <a href="#" class="alert-link">contact us</a>.
+    We do not claim ownership of any content on this site. If you are the rightful owner and would like your work removed, please  
+    <a href="#" class="fw-semibold text-decoration-none" style="color: var(--primary-color);">contact us</a>.
   </div>
 </div>
-
 <!-- Footer -->
 <footer>
     <p>&copy; 2025 Monograph. All rights reserved.</p>
 </footer>
 
+<!-- Bootstrap Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- FontAwesome Scripts -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const alertContainer = document.getElementById("alert_container");
+    document.getElementById("hidden_btn").onclick = function () {
+        let alertContainer = document.getElementById("alert_container");
 
-    function showAlert(message) {
-        const alert = document.createElement("div");
-        alert.className = "alert alert-primary alert-dismissible fade show";
-        alert.role = "alert";
-        alert.innerHTML = message + '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
-        alertContainer.appendChild(alert);
-        
-        setTimeout(() => {
-            alert.classList.remove("show");
-            setTimeout(() => alert.remove(), 200);
-        }, 3000);
-    }
-
-    document.querySelectorAll(".alert-btn").forEach(button => {
-        button.addEventListener("click", function() {
-            showAlert(this.getAttribute("data-message"));
-        });
-    });
-
-    
-
-    document.getElementById("hidden_btn").addEventListener("click", function() {
-        showAlert("The site is still under development so you may experience bulk updates often.");
-    });
-});
+        alertContainer.innerHTML = `
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                The site is still under development. Expect regular updates.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>`;
+    };
 </script>
 
 </body>
