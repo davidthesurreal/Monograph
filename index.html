@@ -1,81 +1,189 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Monograph • Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bdf8decc13.js" crossorigin="anonymous"></script>
+    
+    <style>
+        /* Colors */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f8f9fa;
+            --dark-text: #333;
+        }
+
+        /* Navbar */
+        .menu-btn i, .home-btn i {
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .menu-btn:hover i, .home-btn:hover i {
+            transform: scale(1.2);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: var(--secondary-color);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* Cards */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-white border-bottom">
-  <div class="container-fluid">
-    <button class="btn btn-link text-dark menu-btn" type="button" id="hidden_btn">
-      <i class="fas fa-circle-info"></i>
-    </button>
-    <span class="navbar-brand mx-auto fw-bold fs-1">Monograph</span>
-    <div>
-      <a href="#" class="btn btn-link text-dark home-btn">
-        <i class="fas fa-house"></i>
-      </a>
+<nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+    <div class="container-fluid">
+        <button class="btn btn-link text-dark menu-btn" type="button" id="hidden_btn">
+            <i class="fas fa-circle-info"></i>
+        </button>
+        <span class="navbar-brand mx-auto fw-bold fs-1">Monograph</span>
+        <div>
+            <a href="#" class="btn btn-link text-dark home-btn">
+                <i class="fas fa-house"></i>
+            </a>
+        </div>
     </div>
-  </div>
 </nav>
 
-<style>
-  .menu-btn i, .home-btn i {
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-  .menu-btn:hover i, .home-btn:hover i {
-    transform: scale(1.2);
-    color: #007bff;
-  }
-  .menu-btn:active i, .home-btn:active i {
-    transform: scale(0.9);
-    color: #0056b3;
-  }
-</style>
-
-<!-- Alert Container (Initially Empty) -->
+<!-- Alert Container -->
 <div id="alert_container" class="position-fixed top-0 start-50 translate-middle-x mt-3"></div>
 
-<!-- Main Content -->
-<div class="container py-5 bg-light">
-  <h1 class="text-center">Welcome to Monograph</h1>
-  <p class="text-center text-muted">A brand new world.</p>
-  
-  <div class="d-flex justify-content-center" width="100%">
-    <button class="btn btn-primary">Get started <i class="fas fa-home"></i> </button>
-  </div>
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1 class="display-4 fw-bold">Welcome to Monograph</h1>
+    <p class="lead text-muted">Discover a world of books and knowledge.</p>
+    <button class="btn btn-primary btn-lg" id="start_btn">Get Started <i class="fas fa-book"></i></button>
 </div>
 
+<!-- Hero Image -->
+<img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=1200" class="img-fluid w-100" alt="Books">
 
-<img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ym9va3N8ZW58MHx8MHx8fDA%3D" alt="Books" class="img-fluid" width="100%">
-
-
-<div class="container">
-  <p>
-    
-  </p>
+<!-- Features Section -->
+<div class="container py-5">
+    <p class="text-muted text-center">
+        The <strong>Monograph</strong> aims to connect users with Books and Papers or with a way to gain access to them. Our data comes from multiple <a href="#" class="text-decoration-none">sources</a>.
+    </p>
 </div>
 
+<!-- Cards Section -->
+<div class="container text-center">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
+        
+        <!-- Card 1 -->
+        <div class="col">
+            <div class="card shadow-sm rounded-4">
+                <img src="https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?w=700" class="card-img-top" alt="Fast and Efficient">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Fast and Efficient</h5>
+                    <p class="card-text text-muted">Access books and resources with lightning speed.</p>
+                    <button class="btn btn-light alert-btn" data-message="Fast and Efficient feature coming soon!">Learn More</button>
+                </div>
+            </div>
+        </div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/bdf8decc13.js" crossorigin="anonymous"></script>
+        <!-- Card 2 -->
+        <div class="col">
+            <div class="card shadow-sm rounded-4">
+                <img src="https://images.unsplash.com/photo-1489976908522-aabacf277f49?w=800" class="card-img-top" alt="Seamless Performance">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Seamless Performance</h5>
+                    <p class="card-text text-muted">Optimized for smooth and uninterrupted reading.</p>
+                    <button class="btn btn-light alert-btn" data-message="Seamless Performance feature coming soon!">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col">
+            <div class="card shadow-sm rounded-4">
+                <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=700" class="card-img-top" alt="Diverse Library">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Diverse Library</h5>
+                    <p class="card-text text-muted">Explore books from multiple categories and genres.</p>
+                    <button class="btn btn-light alert-btn" data-message="Diverse Library feature coming soon!">Explore</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col">
+            <div class="card shadow-sm rounded-4">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=700" class="card-img-top" alt="Community Driven">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Community Driven</h5>
+                    <p class="card-text text-muted">Join a community of readers and book lovers.</p>
+                    <button class="btn btn-light alert-btn" data-message="Community feature coming soon!">Join Now</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Monograph. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  document.getElementById("hidden_btn").onclick = function () {
-    let alertContainer = document.getElementById("alert_container");
+document.addEventListener("DOMContentLoaded", function() {
+    const alertContainer = document.getElementById("alert_container");
 
-    // Create the alert dynamically
-    alertContainer.innerHTML = `
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-            The site is still under development and so you may experience updates regularly.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>`;
-  };
+    function showAlert(message) {
+        const alert = document.createElement("div");
+        alert.className = "alert alert-primary alert-dismissible fade show";
+        alert.role = "alert";
+        alert.innerHTML = message + '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+        alertContainer.appendChild(alert);
+        
+        setTimeout(() => {
+            alert.classList.remove("show");
+            setTimeout(() => alert.remove(), 200);
+        }, 3000);
+    }
+
+    document.querySelectorAll(".alert-btn").forEach(button => {
+        button.addEventListener("click", function() {
+            showAlert(this.getAttribute("data-message"));
+        });
+    });
+
+    
+
+    document.getElementById("hidden_btn").addEventListener("click", function() {
+        showAlert("The site is still under development so you may experience bulk updates often.");
+    });
+});
 </script>
 
 </body>
