@@ -94,36 +94,41 @@
   
   function showModal(bookUrl) {
     let modalHtml = `
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5">Download?</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure you want to download this book?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="${bookUrl}" class="btn btn-primary" id="confirm">Yes</a>
-                  </div>
-                </div>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">Download?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to download this book?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#" class="btn btn-primary" id="confirmDownload">Yes</a>
               </div>
             </div>
-        `;
-    
+          </div>
+        </div>
+    `;
+
     let modalContainer = document.createElement("div");
     modalContainer.innerHTML = modalHtml;
     document.body.appendChild(modalContainer);
-    
+
     let modal = new bootstrap.Modal(document.getElementById("staticBackdrop"));
     modal.show();
-    
-    // Remove modal from DOM after it's closed
-    document.getElementById("staticBackdrop").addEventListener("hidden.bs.modal", function() {
-      modalContainer.remove();
+
+    document.getElementById("confirmDownload").onclick = function (event) {
+        event.preventDefault();
+        modal.hide();
+        setTimeout(() => window.open(bookUrl, "_blank"), 300);
+    };
+
+    document.getElementById("staticBackdrop").addEventListener("hidden.bs.modal", function () {
+        modalContainer.remove();
     });
-  }
+}
 </script>
 </html>
