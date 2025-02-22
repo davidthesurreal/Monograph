@@ -1,0 +1,88 @@
+        /* Light Mode Colors */
+        :root {
+            --primary-color: #7b5dbd;
+            --secondary-color: #f3eefc;
+            --text-color: #333;
+            --card-bg: white;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* General Styles */
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--card-bg);
+        }
+
+        .menu-btn i, .home-btn i {
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .menu-btn:hover i, .home-btn:hover i {
+            transform: scale(1.2);
+            color: var(--primary-color);
+        }
+
+        .menu-btn:active i, .home-btn:active i {
+            transform: scale(0.9);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero-section h1 {
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background: var(--primary-color);
+            color: white;
+            transition: 0.3s;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn-custom:hover {
+            background: #6749a5;
+            color: white;
+        }
+
+        /* Cards */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            overflow: hidden;
+            background: var(--card-bg);
+            color: var(--text-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px var(--shadow-color);
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
