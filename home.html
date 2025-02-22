@@ -64,7 +64,7 @@
   
   async function displayData() {
     const books = await getBooks();
-    
+    books.reverse();
     books.forEach((book, index) => {
       bookContainer.innerHTML += `
                 <div class="col">
