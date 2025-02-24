@@ -86,3 +86,13 @@
             padding: 20px 0;
             margin-top: 50px;
         }
+        
+        #newfindsbookcontainer, #bestpicksbookcontainer {
+    padding: 10px;
+    gap: 15px;
+}
+
+.book-card {
+    min-width: 200px; /* Adjust width as needed */
+    flex: 0 0 auto; /* Prevent shrinking */
+}
