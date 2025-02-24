@@ -42,7 +42,7 @@ const { Client, Databases } = Appwrite;
     
     
     for (let i=0; i < 5; i++){
-      const randomIndex = getRandomInt(0, books.length);
+      const randomIndex = getRandomInt(0, books.length - 1);
       bestPicksBookContainer.innerHTML += ` <div class="col">
                 <div class="card shadow-sm rounded-4 book-card" data-index="${randomIndex}" data-url="${books[randomIndex].url}">
                         <img src="${books[randomIndex].image}" class="card-img-top" alt="Book image">
